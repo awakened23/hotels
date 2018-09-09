@@ -1,0 +1,54 @@
+{ "parser": "babel-eslint",
+  "plugins": [
+    "flowtype",
+    "import",
+    "jest",
+    "react"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "airbnb",
+    "plugin:flowtype/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:react/recommended",
+    "plugin:jest/recommended"
+  ],
+  "env": {
+    "jest/globals": true
+  },
+  "settings": {
+    "flowtype": {
+      "onlyFilesWithFlowAnnotation": true
+    },
+    "import/resolver": {
+      "node": {
+        "extensions": [
+          ".js",
+          ".android.js",
+          ".ios.js"
+        ]
+      }
+    }
+  },
+  "rules": {
+    "arrow-parens": ["error", "as-needed"],
+    "indent": ["error", 4],
+    "max-len": ["error", 200],
+    "no-cond-assign": ["error", "except-parens"],
+    "no-use-before-define": "off",
+    "react/display-name": ["error", { "ignoreTranspilerName": true }],
+    "react/jsx-filename-extension": ["error", { "extensions": [".js", ".jsx"] }],
+    "react/jsx-indent": ["error", 4],
+    "react/jsx-indent-props": ["error", 4],
+    "react/sort-comp": "warn", // TODO: think about turning this back on too
+    "react/no-unused-prop-types": "warn", // TODO: turn this on
+    "react/prop-types": "warn" // TODO: turn this on
+  },
+  "globals": {
+    "fetch": false,
+    "Response": false,
+    "__DEV__": false,
+    "navigator": false
+  }
+}
